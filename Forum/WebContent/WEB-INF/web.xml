@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Forum</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>gravar</servlet-name>
+  	<servlet-class>miniforum.ForumServlet</servlet-class>
+  	<init-param>
+  		<param-name>filename</param-name>
+  		<param-value>C:\\apache-tomcat-9.0.30\\work\\arq\\arq.txt</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>bgcol</param-name>
+  		<param-value>lightblue</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>arquivoContador</param-name>
+  		<param-value>C:\\apache-tomcat-9.0.30\\work\\arq\\contAcessos.txt</param-value>
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>gravar</servlet-name>
+  	<url-pattern>/gravar</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>listar</servlet-name>
+  	<servlet-class>miniforum.LeArquivo</servlet-class>
+  	<init-param>
+  		<param-name>filename</param-name>
+  		<param-value>C:\\apache-tomcat-9.0.30\\work\\arq\\arq.txt</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>bgcol</param-name>
+  		<param-value>orange</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>arquivoContador</param-name>
+  		<param-value>C:\\apache-tomcat-9.0.30\\work\\arq\\contAcessos.txt</param-value>
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>listar</servlet-name>
+  	<url-pattern>/listar</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
